@@ -1,0 +1,83 @@
+<div class="navbar-wrapper">
+  <div class="container">
+    <div class="navbar navbar-inverse">
+      
+        <div class="navbar-header">
+        <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="navbar-brand" href="{{ site.baseurl }}/#"><img src="{{ site.baseurl }}/files/site/logo.png" width="50px"/></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{ site.baseurl }}/biographie"><i class="fa fa-user"></i>&nbsp; Biographie</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-photo"></i>&nbsp; Œuvres<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                {% for galerie in site.galeries %}
+                <li><a href="{{ site.baseurl }}/galeries/{{ galerie.key}}">{{ galerie.name }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-newspaper-o"></i>&nbsp; Actualités<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{ site.baseurl }}/expositions"><i class="fa fa-map"></i>&nbsp; Expositions</a></li>
+                <li><a href="{{ site.baseurl }}/critiques"><i class="fa fa-book"></i>&nbsp; Dernières critiques</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-university"></i>&nbsp; Cours<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{ site.baseurl }}/cours/histoire-art"><i class="fa fa-picture-o"></i>&nbsp;Histoire de l'art</a></li>
+                <li><a href="{{ site.baseurl }}/cours/techniques-art"><i class="fa fa-paint-brush"></i>&nbsp;Techniques artistiques</a></li>
+                <li><a href="{{ site.baseurl }}/cours/">Liste des cours</a></li>
+                <li class="text-center">_______________</li>
+                <li><a href="{{ site.baseurl }}/cours/stages"><i class="fa fa-car" aria-hidden="true"></i>&nbsp;Stages</a></li>
+              </ul>
+            </li>
+            <li><a data-toggle="modal" data-target="#Contact"><i class="fa fa-send"></i>&nbsp; Contact</a></li>
+            <li><a data-toggle="modal" data-target="#Search"><i class="fa fa-search"></i>&nbsp;</a></li>
+          </ul>
+        </div>
+    </div>
+  </div><!-- /container -->
+</div><!-- /navbar wrapper -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="Contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Me contacter</h4>
+      </div>
+        {% include contact.html %}
+    </div>
+  </div>
+</div>
+
+<!-- Search -->
+<div class="modal fade" id="Search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Faire une recherche</h4>
+      </div>
+      <div class="modal-body">
+<form class="modal-body" method="get" action="http://duckduckgo.com/">
+    <input type="hidden" name="sites"value="hugues-absil.com"/>
+    <input type="hidden" name="k7" value="#fafafa"/>
+    <input type="hidden" name="kj" value="#101010"/>
+    <input type="hidden" name="ky" value="#fafafa"/>
+    <input class="input-medium search-query" name="q" value="" placeholder="Rechercher via DuckDuckGo" type="text">
+    <button type="submit" class="btn">Search</button>
+</form>
+    </div>
+    </div>
+  </div>
+</div>

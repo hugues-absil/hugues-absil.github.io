@@ -1,0 +1,46 @@
+---
+layout: default_page
+---
+
+<div id="wrapper" class="">
+
+{% include sidebar.html %}
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                    <h1 class="text-center">{{ page.title }}</h1>
+                    <p class="biolinum text-center">Hugues Absil<p/>
+                    <p class="biolinum text-center">{% include date.html date=page.date %}</p>
+                    
+                    <hr>
+                    <section id="main">{{ content }}.</section>
+                    <hr>
+                    <p id="citation"><strong><i class="fa fa-quote-left" aria-hidden="true"></i> Pour citer cet article :</strong></p>
+                    <p class="thumbnail">Hugues Absil, « <em>{{ page.title }}</em> » , {% include date.html date=page.date %} || url:{{ site.url}}{{ page.url }}</p>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+<script>
+var main = document.getElementById('main');
+var titles = main.getElementsByTagName('h2');
+
+var toc = document.getElementById("sidebar-toc");
+
+for(var i=0;i<titles.length;i++){
+  var li = document.createElement('li');
+  var a = document.createElement('a');
+  a.innerHTML = titles[i].innerHTML;
+  a.href = "#"+titles[i].id;
+  li.appendChild(a);
+  toc.appendChild(li);
+  }
+</script>
+
+</div>
+<!-- /#wrapper -->
+
+

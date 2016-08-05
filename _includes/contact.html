@@ -1,0 +1,39 @@
+      <div class="modal-body">
+          <form role="form" id="feedbackForm"  data-toggle="validator" data-disable="false">
+            <div class="form-group">
+              <label class="control-label" for="name">Nom *</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Veuillez entrer votre nom" />
+                <span class="input-group-addon"><i class="glyphicon glyphicon-unchecked form-control-feedback"></i></span>
+              </div>
+              <span class="help-block" style="display: none;">Veuillez entrer votre nom.</span>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="email">Courriel *</label>
+              <div class="input-group">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Entrez votre courriel." required/>
+                <span class="input-group-addon"><i class="glyphicon glyphicon-unchecked form-control-feedback"></i></span>
+              </div>
+              <span class="help-block" style="display: none;">Merci d'entrer une adresse courriel valide.</span>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="reason">Objet *</label>
+              <div class="input-group">
+                <input name="reason" class="form-control" class="form-control" id="reason" name="_subject" placeholder="Entrez l'objet de votre courriel." required/>
+                <span class="input-group-addon"><i class="glyphicon glyphicon-unchecked form-control-feedback"></i></span>
+              </div>
+              <span class="help-block" style="display: none;">Merci de résumer votre message en un ou deux mots.</span>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="message">Message *</label>
+              <div class="input-group">
+                <textarea rows="5" cols="30" class="form-control" type="text" id="message" name="name" placeholder="Veuillez entrer votre message" required></textarea>
+                <span class="input-group-addon"><i class="glyphicon glyphicon-unchecked form-control-feedback"></i></span>
+              </div>
+              <span class="help-block" style="display: none;">Veuillez entrer votre message.</span>
+            </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <input type="submit" id="feedbackSubmit" class="btn btn-success" data-loading-text="Envoi..." value="Envoyer" id="submit">
+      </div>

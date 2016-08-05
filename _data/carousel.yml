@@ -1,0 +1,14 @@
+# images & textes du 'carousel' de la page d'accueil
+#
+# ==================================================
+#
+
+- image: files/galeries/orphiques/08T21.jpg
+  title: Galeries
+  text: Pour voir quelques unes des œuvres de Hugues Absil.
+  link: galerie
+
+- image: files/galeries/venise/05T21.jpg
+  title: Cours
+  text: Accéder aux cours de Hugues Absil.
+  link: cours

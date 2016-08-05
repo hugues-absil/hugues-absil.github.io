@@ -1,0 +1,33 @@
+---
+layout: default_page
+---
+
+<div class="container">
+  <div>
+    <header>
+      <div class="page-header">
+        <h1>{{ page.title }} <br /><small>{% include date.html date=page.date %}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</small></h1>
+      </div>
+
+{% if page.categorie == "exposition" %}
+<div class="col-sm-4"></div>
+<div class="col-sm-4 text-center panel panel-default">
+          <div class="panel-heading"><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></div>
+        <div class="panel-body">
+          <p>
+          <i class="fa fa-calendar"></i>&nbsp; {{ page.date_expo }}<br />
+          <a href="http://www.openstreetmap.org/search?query={{page.lieu_expo}}"><i class="fa fa-map"></i>&nbsp; {{ page.lieu_expo }}</a><br />
+          {% if page.brochure_expo %}<a href="{{ site.baseurl}}/files/expositions/{{ page.brochure_expo }}"><i class="fa fa-file-o"></i>&nbsp; Voir la brochure de l'exposition</a><br />{% endif %}
+          {% if page.brochure_expo %}<i class="fa fa-comment"></i>&nbsp; {{ page.comment_expo }}<br />{% endif %}
+          </p>
+        </div>
+</div>
+<div class="col-sm-4"></div>
+{% endif %}
+
+    </header>
+    <article>
+      {{ content }}
+    </article>
+  </div>
+</div>

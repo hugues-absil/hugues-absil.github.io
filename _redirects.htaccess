@@ -1,0 +1,23 @@
+Redirect 301 /wordpress/ /
+
+#galeries
+Redirect 301 /wordpress/galerie-2 /galeries
+Redirect 301 /wordpress/galerie-2/musiciens /galeries/musiciens
+Redirect 301 /wordpress/galerie-2/venise /galeries/venise
+Redirect 301 /wordpress/galerie-2/paysages-orphiques /galeries/orphiques
+Redirect 301 /wordpress/galerie-2/paysages /galeries/paysages
+Redirect 301 /wordpress/galerie-2/personnages /galeries/personnages
+Redirect 301 /wordpress/galerie-2/dessin /galeries/dessin
+Redirect 301 /wordpress/galerie-2/estampe /galeries/estampe
+
+#pages générales
+Redirect 301 /wordpress/category/expoperso /galeries/expositions
+
+#cours
+Redirect 301 /wordpress/histoire-de-lart2/ /cours/histoire-art
+Redirect 301 /wordpress/technique/ /cours/techniques-art
+
+##Techniques
+Redirect 301 /wordpress/technique/le-monotype/ /cours/technique-art/monotype/
+
+#posts

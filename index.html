@@ -1,0 +1,130 @@
+---
+layout: default
+---
+<!-- Carousel
+================================================== -->
+<div id="myCarousel" class="carousel slide">
+  <!-- Indicators
+  
+  
+    PLACER AUTANT D'INDICATEURS QU'IL Y A D'ITEMS +1 DANS LE FICHIER _data/carousel.yml
+  
+  
+   -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="http://hugues-absil.com/wordpress/wp-content/uploads/2013/07/D%C3%A9filement-biographie.jpg" style="width:100%" class="img-responsive">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Bienvenue sur le site de Hugues Absil</h1>
+          <p></p>
+          <p><a class="btn btn-lg btn-primary" href="">En savoir plus »</a>
+        </p>
+        </div>
+      </div>
+    </div>
+    {% for item in site.data.carousel %}
+    <div class="item">
+      <img src="{{ item.image }}">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>{{ item.title }}</h1>
+          <p>{{ item.text }}</p>
+          <p><a class="btn btn-large btn-primary" href="{{ item.link }}">En savoir plus »</a></p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="icon-next"></span>
+  </a>  
+</div>
+<!-- /.carousel -->
+
+
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container">
+<h3>Voir quelques unes de mes œuvres</h3>
+<hr>
+  <!-- Three columns of text below the carousel -->
+  {% include galeries.html %}
+
+
+<!-- Timeline
+================================================== -->
+<hr>
+<h3 id="timeline">Dernières expositions et critiques</h3>
+<ul class="timeline">
+{% for post in paginator.posts %}
+{% if post.categorie == "exposition" or post.categorie == "une" %}
+    <li {% if post.categorie != "exposition" %}class="timeline-inverted"{% endif %}>
+      <div class="timeline-badge {% if post.categorie == "exposition" %}danger{% endif %}"><i class="glyphicon {% if post.categorie == "exposition" %}glyphicon-calendar{% else %}glyphicon-hand-right{% endif %}"></i></div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h4 class="timeline-title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
+          {% if post.categorie != "exposition" %}<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>{% include date.html date=post.date %}</small></p>{% endif %}
+        </div>
+        <div class="timeline-body">
+          {% if post.categorie == "exposition" %}
+          <p>
+          <i class="fa fa-calendar"></i>&nbsp; {{ post.date_expo }}<br />
+          <a href="http://www.openstreetmap.org/search?query={{post.lieu_expo}}"><i class="fa fa-map"></i>&nbsp; {{ post.lieu_expo }}</a><br />
+          {% if post.brochure_expo %}<a href="{{ site.baseurl}}/files/expositions/{{ post.brochure_expo }}"><i class="fa fa-file-o"></i>&nbsp; Voir la brochure de l'exposition</a><br />{% endif %}
+          {% if post.brochure_expo %}<i class="fa fa-comment"></i>&nbsp; {{ post.comment_expo }}<br />{% endif %}
+          </p>
+          <!--{% else %}<p>{{ post.content }}</p>{% endif %}-->
+        </div>
+      </div>
+    </li>
+{% endif %}
+{% endfor %}
+</ul>
+
+<div>
+  {% if paginator.previous_page %}
+    <div class="col-md-3 text-left">
+      <a href="{{ paginator.previous_page_path }}#timeline">
+        <i class="fa fa-arrow-left"></i> Précédent
+     </a>
+   </div>
+  {% else %}
+    <div class="col-md-3 text-left">
+      <a href="#" class="disabled">
+        <i class="fa fa-arrow-left"></i> Précédent
+     </a>
+   </div>
+  {% endif %}
+
+<div class="col-md-5 text-center">
+  <p class="btn btn-info">Page {{ paginator.page }} / <a href="{{ site.baseurl }}/{{ paginator.total_pages }}#timeline">{{ paginator.total_pages }}</a></p>
+</div>
+
+  {% if paginator.next_page %}
+    <div class="col-md-3 text-right">
+      <a class="" href="{{ paginator.next_page_path }}#timeline">
+        Suivant <i class="fa fa-arrow-right"></i>
+      </a>
+   </div>
+  {% else %}
+    <div class="col-md-3 text-right">
+      <a href="#" class="disabled">
+        Suivant <i class="fa fa-arrow-right"></i>
+     </a>
+   </div>
+  {% endif %}
+</div>
+
+</div><!-- /.container -->

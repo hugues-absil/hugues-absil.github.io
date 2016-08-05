@@ -1,0 +1,9 @@
+  <div class="row">
+  {% for galerie in site.galeries %}
+    <div class="col-md-4 text-center">
+      <img class="img-circle" width="200px" src="{{ site.baseurl }}/files/galeries/{{ galerie.key }}/{{ galerie.une }}.jpg">
+      <h2>{{ galerie.name }}</h2>
+      <p><a class="btn btn-default" href="{{ site.baseurl }}/galeries/{{ galerie.key }}">Voir plus »</a></p>
+    </div>
+  {% endfor %}
+  </div><!-- /.row -->
