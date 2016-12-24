@@ -18,9 +18,9 @@ Entre <code>---</code> en haut des fichiers, on place des informations général
 ### Syntaxe de base
 Les textes sont écrits en syntaxe *Markdown* :
 
-- Italique <code>*italique*</code>
-- Gras <code>**gras**</code>
-- Lien vers url <code>[texte_du_lien](url)</code>
+- Italique <code><pre>*italique*</pre></code>
+- Gras <code><pre>**gras**</pre></code>
+- Lien vers url <code><pre>[texte_du_lien](url)</pre></code>
 
 ### Ajouter une image
 
