@@ -8,6 +8,8 @@ permalink: /biographie/
 <img src="{{ site.baseurl }}/files/personnel/portrait.jpg" alt="Hugues Absil" class="img-thumbnail img-responsive"/>
 </div>
 
+## Présentation
+
 Hugues Absil, né en 1961, est un artiste peintre, graveur, lithographe et dessinateur français. À l’ère de “l’art contemporain”, il fait le choix délibéré de la peinture. Par la pratique quotidienne du croquis, il actualise une correspondance entre l’art et la vie.
   
 En 1989, il remporte le Prix de dessin David Weil (Institut des Beaux-Arts. Paris)
